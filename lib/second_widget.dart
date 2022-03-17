@@ -7,12 +7,18 @@ class SecondWidget extends StatefulWidget {
 }
 
 class _SecondWidgetState extends State<SecondWidget> {
-  int incremente = 0;
+  int increment = 0;
+  void _increment() {
+    setState(() {
+      increment++;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: _increment,
         child: const Icon(Icons.add),
       ),
       appBar: AppBar(
@@ -28,7 +34,7 @@ class _SecondWidgetState extends State<SecondWidget> {
               height: 50,
             ),
             Text(
-              "$incremente",
+              "$increment",
               style: const TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
             )
           ],
